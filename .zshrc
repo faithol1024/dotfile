@@ -122,4 +122,4 @@ alias gotoped="cd ~/go/src/github.com/tokopedia"
 alias showports="lsof -i -P -n | grep LISTEN"
 alias code="GTK_IM_MODULE=ibus code"
 alias startsonar="docker run -d -p 9000:9000 -p 9092:9092 sonarqube"
-
+alias grpcox="cd go/src/github.com/gusaul/grpcox && make start"
