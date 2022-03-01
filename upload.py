@@ -10,7 +10,7 @@ def moveDotfiles():
     pass
 
 def gitNewBranch():
-    branchName =  "dotfile_update_"+ str(time.time)
+    branchName =  "dotfile_update_"+ str(time.time())
 
     print("set HEAD to " + branchName)
     newBranch = repo.create_head(branchName)
@@ -19,9 +19,17 @@ def gitNewBranch():
     newBranch.checkout()
 
     print("git add .")
-    repo.git.add("*")
+    repo.git.add(all=True)
+
+    print("committing change")
+    repo.git.commit(m=branchName)
+
+    print("pushing change")
+    repo.git.push('--set-upstream', 'origin', newBranch)
     
 
 
 def gitCheckDiff():
     pass
+
+gitNewBranch()
